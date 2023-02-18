@@ -11,6 +11,9 @@ $ docker-compose up -d
 # Create database structure
 $ node ace migration:run
 
+# Seed users
+$ node ace db:seed
+
 # install dependencies
 $ npm install
 
