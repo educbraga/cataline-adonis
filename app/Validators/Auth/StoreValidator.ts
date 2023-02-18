@@ -39,5 +39,10 @@ export class StoreValidator {
    * }
    *
    */
-  public messages: CustomMessages = {}
+  public messages: CustomMessages = {
+    // exemplo usando o campo desejado quando a regra for ferida
+    "email.required": "O campo e-mail é obrigatório",
+    // exemplo usando qualquer campo quando a regra for ferida
+    required: "O campo {{field}} é obrigatório"
+  }
 }
