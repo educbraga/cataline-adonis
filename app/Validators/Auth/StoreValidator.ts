@@ -24,7 +24,7 @@ export class StoreValidator {
    *    ```
    */
   public schema = schema.create({
-    email: schema.string({ trim: true }, [rules.email(), rules.unique({ table: 'users', column: 'email' })]),
+    email: schema.string({ trim: true }, [rules.email()]),
     password: schema.string({})
   })
 
