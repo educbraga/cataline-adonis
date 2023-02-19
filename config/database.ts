@@ -62,6 +62,9 @@ const databaseConfig: DatabaseConfig & { orm: Partial<OrmConfig> } = {
   |
   */
   orm: {
+    getSerializeAsKey(_, key) {
+      return key
+    }
   },
 }
 
