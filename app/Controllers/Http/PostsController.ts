@@ -4,7 +4,7 @@ import { StoreValidator, UpdateValidator } from 'App/Validators/Post'
 
 export default class PostsController {
   public async index({}: HttpContextContract) {
-    const posts = await Post.query().orderBy("id")
+    const posts = await Post.query().orderBy("id", 'asc').preload('author')
 
     return posts
   }
@@ -14,7 +14,7 @@ export default class PostsController {
 
     const user = await auth.authenticate()
 
-    const post = await Post.create({ authorId: user.id, ...data})
+    const post = await Post.create({ authorId: user.id, ...data })
 
     await post.preload('author')
 
